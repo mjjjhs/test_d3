@@ -2,7 +2,8 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import global from '@/assets/js/common';
+import myPlugin from '@/assets/js/plugin';
+import '@/assets/fonts/flowfont/flowfont.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -13,7 +14,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 import 'reset-css';
 
 Vue.config.productionTip = false;
-Vue.use(global);
+Vue.use(myPlugin);
 
 const app = new Vue({
   data() {

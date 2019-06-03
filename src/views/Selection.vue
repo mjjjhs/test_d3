@@ -59,9 +59,17 @@ export default {
   },
   methods: {
     singleSelection() {
-      d3.select('.d3_sel_1 .content')
-        .text('D3.js Example.')
-        .style('font-size', '11px');
+      const arr = [1,3,5,7];
+      const a = d3.select('.d3_sel_1 .content').selectAll('rect')
+        .data(arr)
+        .enter()
+        .append('rect');
+        
+        // d3.select('.d3_sel_1 .content').text('test').transition().duration(3000).delay(3000).style('opacity', 0);
+        const newRamp = d3.scaleLinear().domain([500000, 13000000]).range([0, 500]);
+        console.log(newRamp(1000000));
+        console.log(newRamp(9000000));
+        console.log(newRamp.invert(313));
     },
     
     multiSelection() {

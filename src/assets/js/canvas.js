@@ -9,12 +9,13 @@ const MIN_SCALE = 0.2;
 const MIN_SCALE_TO_RENDER = 0.6;
 const DEFAULT_PAGE_TITLE = '';
 
-let svg = null, canvas = null;
+let svg = null, canvas = null, app = null; 
 
 export default {
   
-  init() {
-    
+  init(Vue) {
+    app = Vue;
+    console.log('svg::', Vue.$root.$canvas.svg);
     // create the canvas
     app.svg = d3.select('#canvas_container').append('svg');
     // create the canvas element
